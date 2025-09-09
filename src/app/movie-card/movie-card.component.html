@@ -1,4 +1,4 @@
-<div *ngIf="movie" class="card">
+<div *ngIf="movie" class="card" routerLink="/movies/{{ movie.id }}">
   <img [src]="imageBaseUrl + movie.poster_path" [alt]="movie.title" />
   <div class="card-body">
     <h5 class="card-title">{{ movie.title }}</h5>
