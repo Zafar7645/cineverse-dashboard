@@ -1,4 +1,4 @@
-import { IMovie } from './moive';
+import { IMovie } from './movie';
 
 export interface IMovieList {
   page: number;
