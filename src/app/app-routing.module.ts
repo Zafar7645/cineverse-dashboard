@@ -9,6 +9,10 @@ const routes: Routes = [
     path: '',
     component: MovieListComponent,
   },
+  {
+    path: '**',
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({
