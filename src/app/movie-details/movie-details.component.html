@@ -1,0 +1,59 @@
+<app-loader
+  [isLoading]="isLoading"
+  message="Loading Movie Details..."
+></app-loader>
+
+<app-error [error]="error"></app-error>
+
+<div class="details-container" *ngIf="movieDetails">
+  <div
+    class="backdrop"
+    [style.background-image]="
+      'url(' + imageBaseUrl + movieDetails.backdrop_path + ')'
+    "
+  >
+    <div class="backdrop-overlay">
+      <h1 class="movie-title">{{ movieDetails.title }}</h1>
+      <p class="tagline">
+        <em>{{ movieDetails.tagline }}</em>
+      </p>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="poster-container">
+      <img
+        class="poster"
+        [src]="imageBaseUrl + movieDetails.poster_path"
+        [alt]="movieDetails.title"
+      />
+    </div>
+
+    <div class="info-container">
+      <h2>Overview</h2>
+      <p class="overview">{{ movieDetails.overview }}</p>
+
+      <h3>Details</h3>
+      <div class="details-grid">
+        <div>
+          <strong>Release Date:</strong>
+          {{ movieDetails.release_date | date : "longDate" }}
+        </div>
+        <div><strong>Runtime:</strong> {{ movieDetails.runtime }} minutes</div>
+        <div>
+          <strong>User Score:</strong>
+          {{ movieDetails.vote_average | number : "1.1-1" }} / 10
+        </div>
+      </div>
+
+      <h3>Genres</h3>
+      <div class="genres">
+        <span *ngFor="let genre of movieDetails.genres" class="genre-pill">{{
+          genre.name
+        }}</span>
+      </div>
+
+      <button class="back-button" (click)="goBack()">Back to List</button>
+    </div>
+  </div>
+</div>
