@@ -38,6 +38,16 @@ export class MovieDbService {
       .pipe(catchError(this.handleError));
   }
 
+  searchMovie(query: string): Observable<Object> {
+    const endpoint = '/search/movie';
+    const params = new HttpParams().set('query', query);
+    return this.httpClient
+      .get(this.baseUrl + endpoint, {
+        params: params,
+      })
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(error: HttpErrorResponse) {
     console.error('An error occured: ', error.message);
     return throwError(
