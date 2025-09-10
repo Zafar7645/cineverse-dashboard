@@ -1,4 +1,5 @@
 import { catchError, Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 
 import {
   HttpClient,
@@ -14,7 +15,7 @@ import { IMovieList } from '../components/models/movie-list';
   providedIn: 'root',
 })
 export class MovieDbService {
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) {}
 
