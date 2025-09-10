@@ -1,5 +1,4 @@
 import { catchError, Observable, throwError } from 'rxjs';
-import { secrets } from 'src/environments/environment.secrets';
 
 import {
   HttpClient,
@@ -15,34 +14,27 @@ import { IMovieList } from '../components/models/movie-list';
   providedIn: 'root',
 })
 export class MovieDbService {
-  private apiKey = secrets.tmdbAPIKey;
-  private baseUrl = 'https://api.themoviedb.org/3';
+  private baseUrl = 'http://localhost:3000';
 
   constructor(private httpClient: HttpClient) {}
 
   getPopularMovies(): Observable<IMovieList> {
-    const endpoint = '/movie/popular';
-    const params = new HttpParams().set('api_key', this.apiKey);
+    const endpoint = '/api/popular-movies';
     return this.httpClient
-      .get<IMovieList>(this.baseUrl + endpoint, {
-        params: params,
-      })
+      .get<IMovieList>(this.baseUrl + endpoint)
       .pipe(catchError(this.handleError));
   }
 
   getMovieDetails(id: number): Observable<IMovieDetails> {
-    const endpoint = `/movie/${id}`;
-    const params = new HttpParams().set('api_key', this.apiKey);
+    const endpoint = `/api/movie/${id}`;
     return this.httpClient
-      .get<IMovieDetails>(this.baseUrl + endpoint, { params: params })
+      .get<IMovieDetails>(this.baseUrl + endpoint)
       .pipe(catchError(this.handleError));
   }
 
   searchMovie(query: string): Observable<IMovieList> {
-    const endpoint = '/search/movie';
-    const params = new HttpParams()
-      .set('api_key', this.apiKey)
-      .set('query', query);
+    const endpoint = '/api/search/movie';
+    const params = new HttpParams().set('query', query);
     return this.httpClient
       .get<IMovieList>(this.baseUrl + endpoint, {
         params: params,
