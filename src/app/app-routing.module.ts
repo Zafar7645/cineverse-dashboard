@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { MovieListComponent } from './movie-list/movie-list.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -11,8 +10,11 @@ const routes: Routes = [
     component: MovieListComponent,
   },
   {
-    path: 'movies/:id',
-    component: MovieDetailsComponent,
+    path: 'movie',
+    loadChildren: () =>
+      import('./movie-details/movie-details.module').then(
+        (m) => m.MovieDetailsModule
+      ),
   },
   {
     path: '**',

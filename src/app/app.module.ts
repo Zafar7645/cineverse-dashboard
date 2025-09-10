@@ -4,17 +4,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MovieCardComponent } from './movie-card/movie-card.component';
-import { MovieListComponent } from './movie-list/movie-list.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { LoaderComponent } from './loader/loader.component';
-import { ErrorComponent } from './error/error.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { MovieListComponent } from './components/movie-list/movie-list.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [AppComponent, MovieCardComponent, MovieListComponent, NotFoundComponent, MovieDetailsComponent, LoaderComponent, ErrorComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    MovieCardComponent,
+    MovieListComponent,
+    NotFoundComponent,
+    HeaderComponent,
+  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent],
 })

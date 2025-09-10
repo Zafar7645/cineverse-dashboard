@@ -10,7 +10,7 @@ import {
 import { Component, OnInit } from '@angular/core';
 
 import { IMovie } from '../models/movie';
-import { MovieDbService } from '../services/movie-db.service';
+import { MovieDbService } from '../../services/movie-db.service';
 
 @Component({
   selector: 'app-movie-list',

@@ -8,8 +8,8 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { IMovieList } from '../models/movie-list';
-import { IMovieDetails } from '../models/movie';
+import { IMovieDetails } from '../components/models/movie';
+import { IMovieList } from '../components/models/movie-list';
 
 @Injectable({
   providedIn: 'root',

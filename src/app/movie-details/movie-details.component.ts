@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { IMovie, IMovieDetails } from '../models/movie';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { IMovieDetails } from '../components/models/movie';
 import { MovieDbService } from '../services/movie-db.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MovieDbService } from '../services/movie-db.service';
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css'],
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent {
   movieDetails!: IMovieDetails;
   imageBaseUrl = 'https://image.tmdb.org/t/p/w500';
   isLoading: boolean = false;
