@@ -1,13 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-client/cineverse-dashboard/dist/
+/dist
 /tmp
 /out-tsc
 /bazel-out
 
 # Node
-client/cineverse-dashboard/node_modules
+/node_modules
 npm-debug.log
 yarn-error.log
 
@@ -29,7 +29,7 @@ yarn-error.log
 .history/*
 
 # Miscellaneous
-client/cineverse-dashboard/.angular
+/.angular/cache
 .sass-cache/
 /connect.lock
 /coverage
@@ -42,7 +42,4 @@ testem.log
 Thumbs.db
 
 # Secrets
-client/cineverse-dashboard/src/environments/environment.secrets.ts
-
-# Environment Variables
-server/cineverse-bff/.env
+src/environments/environment.secrets.ts
