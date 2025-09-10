@@ -1,3 +1,5 @@
+<app-header (searchQueryChange)="handleSearch($event)"></app-header>
+
 <app-loader [isLoading]="isLoading" message="Loading Movies..."></app-loader>
 
 <app-error [error]="error"></app-error>

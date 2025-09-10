@@ -30,4 +30,8 @@ export class MovieListComponent implements OnInit {
       },
     });
   }
+
+  handleSearch(query: string): void {
+    console.log(query);
+  }
 }
