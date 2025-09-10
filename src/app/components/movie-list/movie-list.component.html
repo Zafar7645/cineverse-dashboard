@@ -4,7 +4,14 @@
 
 <app-error [error]="error"></app-error>
 
-<div *ngIf="!isLoading && !error" class="container mt-4">
+<div *ngIf="!displayedMovieList.length" class="empty-search">
+  No movies found.
+</div>
+
+<div
+  *ngIf="!isLoading && !error && displayedMovieList.length"
+  class="container mt-4"
+>
   <div class="row">
     <div
       *ngFor="let movie of displayedMovieList"
