@@ -38,11 +38,13 @@ export class MovieDbService {
       .pipe(catchError(this.handleError));
   }
 
-  searchMovie(query: string): Observable<Object> {
+  searchMovie(query: string): Observable<IMovieList> {
     const endpoint = '/search/movie';
-    const params = new HttpParams().set('query', query);
+    const params = new HttpParams()
+      .set('api_key', this.apiKey)
+      .set('query', query);
     return this.httpClient
-      .get(this.baseUrl + endpoint, {
+      .get<IMovieList>(this.baseUrl + endpoint, {
         params: params,
       })
       .pipe(catchError(this.handleError));

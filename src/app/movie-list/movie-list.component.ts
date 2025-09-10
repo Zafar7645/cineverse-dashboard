@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { IMovie } from '../models/movie';
+import { IMovieList } from '../models/movie-list';
 import { MovieDbService } from '../services/movie-db.service';
 
 @Component({
@@ -32,6 +33,13 @@ export class MovieListComponent implements OnInit {
   }
 
   handleSearch(query: string): void {
-    console.log(query);
+    this.movieDbService.searchMovie(query).subscribe({
+      next: (searchResults: IMovieList) => {
+        this.movieList = searchResults.results;
+      },
+      error: (err: Error) => {
+        this.error = err.message;
+      },
+    });
   }
 }
