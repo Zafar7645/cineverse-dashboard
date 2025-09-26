@@ -37,15 +37,18 @@ Live demo: [cineverse-dashboard.vercel.app](https://cineverse-dashboard.vercel.a
 
 ### Home Page
 The Home Page displaying a list of popular movies.
-![CineVerse Home Page Screenshot](client/cineverse-dashboard/src/assets/screenshots/Home Page.png)
+
+![CineVerse Home Page Screenshot](client/cineverse-dashboard/src/assets/screenshots/home-page.png)
 
 ### Movie Details Page
 The Movie Details Page displaying the details of the movie such as overview, runtime, user rating, etc.
-![Movie Details Page Screenshot](client/cineverse-dashboard/src/assets/screenshots/Movie Details.png)
+
+![Movie Details Page Screenshot](client/cineverse-dashboard/src/assets/screenshots/movie-details-page.png)
 
 ### Search Results
 The page displaying the search results.
-![Search Results Screenshot](client/cineverse-dashboard/src/assets/screenshots/Search Results.png)
+
+![Search Results Screenshot](client/cineverse-dashboard/src/assets/screenshots/search-results.png)
 
 ---
 
